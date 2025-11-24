@@ -1,0 +1,23 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="goldenPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <!-- Golden Background Base (Subtle) -->
+      <rect width="100" height="100" fill="#fff8e1" opacity="0.1"/>
+      
+      <!-- Mandala / Floral Element -->
+      <g fill="none" stroke="#DAA520" stroke-width="1" opacity="0.3">
+        <circle cx="50" cy="50" r="20" />
+        <circle cx="50" cy="50" r="10" />
+        <path d="M50 30 Q60 30 60 40 T50 50 T40 40 T50 30" />
+        <path d="M50 30 Q40 30 40 40 T50 50 T60 40 T50 30" transform="rotate(90 50 50)" />
+        <path d="M50 30 Q60 30 60 40 T50 50 T40 40 T50 30" transform="rotate(180 50 50)" />
+        <path d="M50 30 Q40 30 40 40 T50 50 T60 40 T50 30" transform="rotate(270 50 50)" />
+        
+        <!-- Sanskrit-like strokes (Abstract) -->
+        <path d="M20 20 Q30 10 40 20 T60 20" stroke="#B8860B" stroke-width="0.5" />
+        <path d="M80 80 Q70 90 60 80 T40 80" stroke="#B8860B" stroke-width="0.5" />
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#goldenPattern)" />
+</svg>

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8e1; /* Warm cream background */
+  --foreground: #4a0404; /* Deep maroon text */
+  --font-cinzel: "Cinzel", serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-cinzel);
+  --font-sans: var(--font-lato);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-lato);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cinzel);
+}
