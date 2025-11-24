@@ -43,9 +43,13 @@ export default function Page() {
       {loading && <SplashScreen onComplete={handleSplashComplete} />}
 
       {!loading && (
-        <div className="min-h-screen bg-[#fff5d7] text-[#4a0404] overflow-x-hidden font-sans">
+        <div className="min-h-screen bg-[#fff5d7] text-[#4a0404] overflow-x-hidden font-sans relative">
           {/* Decorative Background Pattern */}
-          <div className="fixed inset-0 pointer-events-none opacity-40 z-0 bg-[url('/golden-texture.svg')] bg-[length:100px_100px]"></div>
+          <div className="fixed inset-0 pointer-events-none opacity-60 z-0 bg-[url('/golden-texture.svg')] bg-[length:200px_200px]"></div>
+
+          {/* Vignette/Gradient Overlay for Depth */}
+          <div className="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,245,215,0)_50%,rgba(218,165,32,0.1)_100%)]"></div>
+
           {/* NAVBAR */}
           <motion.nav
             initial={{ y: -100, opacity: 0 }}

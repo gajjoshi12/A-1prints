@@ -24,7 +24,7 @@ export default function SplashScreen({ onComplete }) {
                     transition={{ duration: 1, ease: "easeInOut" }}
                     className="fixed inset-0 z-50 flex items-center justify-center bg-[#4a0404]"
                 >
-                    <div className="absolute inset-0 opacity-30 bg-[url('/golden-texture.svg')] bg-[length:100px_100px]"></div>
+                    <div className="absolute inset-0 opacity-40 bg-[url('/golden-texture.svg')] bg-[length:200px_200px]"></div>
                     <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
