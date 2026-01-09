@@ -97,7 +97,7 @@ export default function SplashScreen({ onComplete }) {
 
                     {/* Peacock Feathers Animation (Symbolic) */}
                     <motion.div
-                        className="absolute top-10 left-10 md:top-20 md:left-20 opacity-40"
+                        className="absolute top-10 -left-16 md:top-20 md:left-20 opacity-40 transform scale-75 md:scale-100"
                         initial={{ scale: 0, rotate: -45 }}
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{ duration: 2, delay: 0.5 }}
@@ -106,7 +106,7 @@ export default function SplashScreen({ onComplete }) {
                     </motion.div>
 
                     <motion.div
-                        className="absolute top-10 right-10 md:top-20 md:right-20 opacity-40"
+                        className="absolute top-10 -right-16 md:top-20 md:right-20 opacity-40 transform scale-75 md:scale-100"
                         initial={{ scale: 0, rotate: 45 }}
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{ duration: 2, delay: 0.5 }}
