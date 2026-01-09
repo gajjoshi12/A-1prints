@@ -9,6 +9,8 @@ import AnimatedElephant from "./components/AnimatedElephant";
 import AnimatedPeacock from "./components/AnimatedPeacock";
 import FloatingPatterns from "./components/FloatingPatterns";
 import GoldenParticles from "./components/GoldenParticles";
+import ServiceCarousel from "./components/ServiceCarousel";
+import Navbar from "./components/Navbar";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -57,48 +59,18 @@ export default function Page() {
           <GoldenParticles />
 
           {/* NAVBAR */}
-          <motion.nav
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full bg-[#8B0000]/95 backdrop-blur-md text-[#FFD700] shadow-2xl py-4 sticky top-0 z-50 border-b-4 border-[#FFD700]"
-          >
-            <div className="absolute inset-0 bg-[url('/golden-texture.svg')] bg-[length:100px_100px] opacity-10 pointer-events-none"></div>
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 relative z-10">
-              <div className="flex items-center space-x-4">
-                <motion.img
-                  src="/logo.png"
-                  alt="A-1 Prints Logo"
-                  className="h-16 w-auto drop-shadow-lg"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                />
-                <span className="text-3xl font-display font-bold tracking-[0.2em] hidden sm:block text-gradient-gold">A-1 PRINTS</span>
-              </div>
-
-              <ul className="flex space-x-10 font-display font-bold text-lg tracking-wider">
-                {["Home", "Gallery", "About", "Contact"].map((item) => (
-                  <motion.li
-                    key={item}
-                    whileHover={{ scale: 1.1, textShadow: "0 0 8px rgba(255,215,0,0.8)" }}
-                    className="cursor-pointer transition-colors relative group text-[#FFD700]"
-                  >
-                    {item}
-                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-[#FFD700] transition-all duration-300 group-hover:w-full box-shadow-glow"></span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.nav>
+          <Navbar />
 
           <div className="relative max-w-7xl mx-auto py-24 space-y-32 px-6 z-10">
 
             {/* HERO / HERITAGE SECTION */}
             <motion.div
+              id="home"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="text-center max-w-4xl mx-auto relative px-4"
+              className="text-center max-w-4xl mx-auto relative px-4 scroll-mt-20"
             >
               {/* Decorative Side Elephants for Hero */}
               <div className="hidden lg:block absolute -left-48 top-0 scale-75 opacity-80">
@@ -125,8 +97,9 @@ export default function Page() {
               <BlockPrintDivider />
             </motion.div>
 
-            {/* SECTION 1: Hand Block Printing */}
+            {/* SECTION 1: Hand Block Printing - ABOUT */}
             <motion.div
+              id="about"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -170,13 +143,14 @@ export default function Page() {
               </div>
             </motion.div>
 
-            {/* SECTION 2 – 3 images side by side */}
+            {/* SECTION 2 – 3 images side by side - GALLERY */}
             <motion.div
+              id="gallery"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-10"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-10 scroll-mt-20"
             >
               {["/c2.jpeg", "/c3.jpeg", "/c4.jpeg"].map((src, index) => (
                 <motion.div
@@ -253,6 +227,11 @@ export default function Page() {
               </div>
             </div>
 
+            {/* OUR SERVICES CAROUSEL */}
+            <div id="services" className="scroll-mt-20">
+              <ServiceCarousel />
+            </div>
+
             {/* SECTION 4 – 3 image grid */}
             <div className="text-center mb-8">
               <h2 className="text-4xl font-display font-bold text-[#8B0000]">Our Royal Collection</h2>
@@ -280,6 +259,43 @@ export default function Page() {
               ))}
             </motion.div>
 
+          </div>
+
+          {/* CONTACT SECTION */}
+          <div id="contact" className="scroll-mt-20 bg-[#8B0000] py-16 mt-20">
+            <div className="absolute inset-0 bg-[url('/golden-texture.svg')] bg-[length:100px_100px] opacity-10 pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-[#FFD700] mb-4">Get In Touch</h2>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="h-[2px] w-16 bg-gradient-to-r from-transparent to-[#DAA520]" />
+                  <div className="w-2 h-2 rotate-45 bg-[#DAA520]" />
+                  <div className="h-[2px] w-16 bg-gradient-to-l from-transparent to-[#DAA520]" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="p-6">
+                  <div className="text-4xl mb-4">📍</div>
+                  <h3 className="text-xl font-display font-bold text-[#FFD700] mb-2">Visit Us</h3>
+                  <p className="text-[#ffeeba] font-serif">Jaipur, Rajasthan, India</p>
+                </div>
+                <div className="p-6">
+                  <div className="text-4xl mb-4">📞</div>
+                  <h3 className="text-xl font-display font-bold text-[#FFD700] mb-2">Call Us</h3>
+                  <p className="text-[#ffeeba] font-serif">+91 98765 43210</p>
+                </div>
+                <div className="p-6">
+                  <div className="text-4xl mb-4">✉️</div>
+                  <h3 className="text-xl font-display font-bold text-[#FFD700] mb-2">Email Us</h3>
+                  <p className="text-[#ffeeba] font-serif">info@a1prints.com</p>
+                </div>
+              </div>
+
+              <div className="text-center mt-8 pt-8 border-t border-[#FFD700]/20">
+                <p className="text-[#DAA520] font-serif">© 2024 A-1 Prints. All Rights Reserved.</p>
+              </div>
+            </div>
           </div>
 
           {/* Footer Decorative Border */}
