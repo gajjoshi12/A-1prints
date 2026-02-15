@@ -15,127 +15,168 @@ export default function AnimatedElephant({ position = "left", delay = 0 }) {
         >
             <motion.svg
                 width="180"
-                height="140"
-                viewBox="0 0 180 140"
+                height="180"
+                viewBox="0 0 180 180"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 style={{ transform: isLeft ? "scaleX(1)" : "scaleX(-1)" }}
             >
-                {/* Elephant Body */}
-                <ellipse cx="90" cy="85" rx="55" ry="40" fill="url(#elephantGradient)" />
-
-                {/* Head */}
-                <circle cx="145" cy="60" r="30" fill="url(#elephantGradient)" />
-
-                {/* Trunk with animation */}
-                <motion.path
-                    d="M170 70 Q185 85 180 105 Q175 120 165 125"
-                    stroke="url(#elephantGradient)"
-                    strokeWidth="12"
-                    strokeLinecap="round"
-                    fill="none"
-                    animate={{
-                        d: [
-                            "M170 70 Q185 85 180 105 Q175 120 165 125",
-                            "M170 70 Q190 80 185 100 Q180 115 175 120",
-                            "M170 70 Q185 85 180 105 Q175 120 165 125"
-                        ]
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                {/* Ear */}
-                <ellipse cx="125" cy="50" rx="20" ry="25" fill="url(#elephantGradient)" opacity="0.9" />
-                <ellipse cx="125" cy="50" rx="12" ry="16" fill="#FFD700" opacity="0.3" />
-
-                {/* Eye */}
-                <circle cx="155" cy="55" r="4" fill="#1a0000" />
-                <circle cx="156" cy="54" r="1.5" fill="white" />
-
-                {/* Tusk */}
-                <path d="M160 75 Q170 85 165 95" stroke="#FFFFF0" strokeWidth="4" strokeLinecap="round" fill="none" />
-
-                {/* Legs */}
-                <rect x="55" y="110" width="15" height="28" rx="5" fill="url(#elephantGradient)" />
-                <rect x="80" y="110" width="15" height="28" rx="5" fill="url(#elephantGradient)" />
-                <rect x="105" y="110" width="15" height="28" rx="5" fill="url(#elephantGradient)" />
-                <rect x="130" y="100" width="12" height="25" rx="4" fill="url(#elephantGradient)" />
-
-                {/* Decorative Blanket */}
-                <rect x="50" y="65" width="80" height="35" rx="5" fill="url(#blanketGradient)" />
-                <rect x="55" y="70" width="70" height="25" rx="3" fill="none" stroke="#FFD700" strokeWidth="2" />
-
-                {/* Blanket Patterns */}
-                <circle cx="70" cy="82" r="6" fill="#FFD700" opacity="0.8" />
-                <circle cx="90" cy="82" r="6" fill="#FFD700" opacity="0.8" />
-                <circle cx="110" cy="82" r="6" fill="#FFD700" opacity="0.8" />
-
-                {/* Crown/Headpiece */}
-                <motion.path
-                    d="M135 35 L145 20 L155 35 L165 25 L160 40"
-                    fill="url(#goldGradient)"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                />
-
-                {/* Forehead Jewel */}
-                <circle cx="145" cy="45" r="5" fill="#FF0000" stroke="#FFD700" strokeWidth="2" />
-
-                {/* Tail */}
-                <motion.path
-                    d="M35 80 Q20 90 25 105"
-                    stroke="url(#elephantGradient)"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    fill="none"
-                    animate={{
-                        d: [
-                            "M35 80 Q20 90 25 105",
-                            "M35 80 Q15 95 20 110",
-                            "M35 80 Q20 90 25 105"
-                        ]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                />
-
-                {/* Tail Tuft */}
-                <circle cx="25" cy="108" r="5" fill="#4a0404" />
-
-                {/* Decorative bells on blanket */}
-                <motion.circle
-                    cx="60" cy="98"
-                    r="4"
-                    fill="#FFD700"
-                    animate={{ y: [0, 2, 0] }}
-                    transition={{ duration: 0.5, repeat: Infinity }}
-                />
-                <motion.circle
-                    cx="120" cy="98"
-                    r="4"
-                    fill="#FFD700"
-                    animate={{ y: [0, 2, 0] }}
-                    transition={{ duration: 0.5, repeat: Infinity, delay: 0.25 }}
-                />
-
                 <defs>
-                    <linearGradient id="elephantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#8B4513" />
-                        <stop offset="50%" stopColor="#6B3A2E" />
-                        <stop offset="100%" stopColor="#4a0404" />
-                    </linearGradient>
-                    <linearGradient id="blanketGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id={`petalGrad1_${position}`} x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#8B0000" />
                         <stop offset="50%" stopColor="#B22222" />
-                        <stop offset="100%" stopColor="#8B0000" />
+                        <stop offset="100%" stopColor="#DC143C" />
                     </linearGradient>
-                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#FFD700" />
-                        <stop offset="50%" stopColor="#FFA500" />
+                    <linearGradient id={`petalGrad2_${position}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#DAA520" />
                         <stop offset="100%" stopColor="#FFD700" />
                     </linearGradient>
+                    <radialGradient id={`centerGrad_${position}`} cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#FFD700" />
+                        <stop offset="60%" stopColor="#DAA520" />
+                        <stop offset="100%" stopColor="#B8860B" />
+                    </radialGradient>
+                    <linearGradient id={`stemGrad_${position}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#2E7D32" />
+                        <stop offset="100%" stopColor="#1B5E20" />
+                    </linearGradient>
+                    <linearGradient id={`leafGrad_${position}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#4CAF50" />
+                        <stop offset="100%" stopColor="#2E7D32" />
+                    </linearGradient>
                 </defs>
+
+                {/* Stem */}
+                <motion.path
+                    d="M90 105 Q85 130 88 155 Q89 165 90 175"
+                    stroke={`url(#stemGrad_${position})`}
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    fill="none"
+                    animate={{
+                        d: [
+                            "M90 105 Q85 130 88 155 Q89 165 90 175",
+                            "M90 105 Q87 130 89 155 Q90 165 91 175",
+                            "M90 105 Q85 130 88 155 Q89 165 90 175"
+                        ]
+                    }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* Leaves */}
+                <motion.path
+                    d="M88 135 Q70 125 60 135 Q65 145 88 140"
+                    fill={`url(#leafGrad_${position})`}
+                    animate={{ rotate: [-3, 3, -3] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    style={{ transformOrigin: "88px 137px" }}
+                />
+                <motion.path
+                    d="M90 150 Q110 140 120 150 Q115 160 90 155"
+                    fill={`url(#leafGrad_${position})`}
+                    animate={{ rotate: [3, -3, 3] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    style={{ transformOrigin: "90px 152px" }}
+                />
+
+                {/* Outer petals layer (8 petals) */}
+                {Array.from({ length: 8 }, (_, i) => {
+                    const angle = i * 45;
+                    return (
+                        <motion.ellipse
+                            key={`outer_${i}`}
+                            cx={90}
+                            cy={55}
+                            rx={12}
+                            ry={35}
+                            fill={`url(#petalGrad1_${position})`}
+                            opacity={0.85}
+                            style={{
+                                transform: `rotate(${angle}deg)`,
+                                transformOrigin: "90px 80px"
+                            }}
+                            animate={{ scale: [1, 1.04, 1] }}
+                            transition={{ duration: 3, repeat: Infinity, delay: i * 0.15, ease: "easeInOut" }}
+                        />
+                    );
+                })}
+
+                {/* Inner petals layer (8 petals, rotated 22.5deg) */}
+                {Array.from({ length: 8 }, (_, i) => {
+                    const angle = i * 45 + 22.5;
+                    return (
+                        <motion.ellipse
+                            key={`inner_${i}`}
+                            cx={90}
+                            cy={60}
+                            rx={8}
+                            ry={25}
+                            fill={`url(#petalGrad2_${position})`}
+                            opacity={0.9}
+                            style={{
+                                transform: `rotate(${angle}deg)`,
+                                transformOrigin: "90px 80px"
+                            }}
+                            animate={{ scale: [1, 1.06, 1] }}
+                            transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.1 + 0.5, ease: "easeInOut" }}
+                        />
+                    );
+                })}
+
+                {/* Center of flower */}
+                <motion.circle
+                    cx={90}
+                    cy={80}
+                    r={16}
+                    fill={`url(#centerGrad_${position})`}
+                    animate={{ scale: [1, 1.08, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* Center dots pattern */}
+                {Array.from({ length: 6 }, (_, i) => {
+                    const dotAngle = i * 60;
+                    const dotR = 8;
+                    return (
+                        <motion.circle
+                            key={`dot_${i}`}
+                            cx={90 + Math.cos(dotAngle * Math.PI / 180) * dotR}
+                            cy={80 + Math.sin(dotAngle * Math.PI / 180) * dotR}
+                            r={2}
+                            fill="#8B0000"
+                            opacity={0.6}
+                            animate={{ opacity: [0.4, 0.8, 0.4] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+                        />
+                    );
+                })}
+
+                {/* Golden shimmer particles */}
+                {Array.from({ length: 5 }, (_, i) => {
+                    const px = 70 + Math.random() * 40;
+                    const py = 50 + Math.random() * 60;
+                    return (
+                        <motion.circle
+                            key={`sparkle_${i}`}
+                            cx={px}
+                            cy={py}
+                            r={1.5}
+                            fill="#FFD700"
+                            animate={{
+                                opacity: [0, 1, 0],
+                                scale: [0.5, 1.5, 0.5]
+                            }}
+                            transition={{
+                                duration: 2 + i * 0.5,
+                                repeat: Infinity,
+                                delay: i * 0.4,
+                                ease: "easeInOut"
+                            }}
+                        />
+                    );
+                })}
             </motion.svg>
         </motion.div>
     );

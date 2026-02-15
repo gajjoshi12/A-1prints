@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
     { name: "Home", sectionId: "home" },
-    { name: "Gallery", sectionId: "gallery" },
-    { name: "Services", sectionId: "services" },
     { name: "About", sectionId: "about" },
+    { name: "Services", sectionId: "services" },
+    { name: "Process", sectionId: "process" },
+    { name: "Quality", sectionId: "quality" },
+    { name: "FAQ", sectionId: "faq" },
     { name: "Contact", sectionId: "contact" },
 ];
 

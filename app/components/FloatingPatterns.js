@@ -3,7 +3,7 @@
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
-// Traditional Rajasthani block print motifs
+// Textile printing motifs
 const patterns = [
     // Paisley
     ({ size, color }) => (
@@ -35,15 +35,15 @@ const patterns = [
             <circle cx="25" cy="25" r="5" fill={color} opacity="0.7" />
         </svg>
     ),
-    // Elephant mini
+    // Marigold flower
     ({ size, color }) => (
         <svg width={size} height={size} viewBox="0 0 50 50" fill="none">
-            <ellipse cx="25" cy="28" rx="15" ry="10" fill={color} opacity="0.6" />
-            <circle cx="38" cy="22" r="8" fill={color} opacity="0.6" />
-            <path d="M44 25 Q50 30 48 38" stroke={color} strokeWidth="3" fill="none" opacity="0.6" />
-            <rect x="12" y="35" width="5" height="10" rx="2" fill={color} opacity="0.5" />
-            <rect x="22" y="35" width="5" height="10" rx="2" fill={color} opacity="0.5" />
-            <rect x="32" y="35" width="4" height="8" rx="2" fill={color} opacity="0.5" />
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+                <ellipse key={i} cx="25" cy="15" rx="5" ry="12" fill={color} opacity="0.6"
+                    transform={`rotate(${angle} 25 25)`} />
+            ))}
+            <circle cx="25" cy="25" r="7" fill={color} opacity="0.8" />
+            <circle cx="25" cy="25" r="4" fill="white" opacity="0.3" />
         </svg>
     ),
     // Sun/Mandala

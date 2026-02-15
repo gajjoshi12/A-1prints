@@ -6,44 +6,44 @@ import { motion, useAnimationControls } from "framer-motion";
 const services = [
     {
         id: 1,
-        title: "Hand Block Printing",
-        description: "Traditional wooden block printing using centuries-old techniques passed down through generations of master artisans.",
-        icon: "🎨",
+        title: "Screen Printing",
+        description: "Precision screen printing on cotton, nylon, munga, supernet, and polyester fabrics with unmatched consistency and quality.",
+        icon: "🖨️",
         color: "#8B0000",
     },
     {
         id: 2,
-        title: "Natural Dyeing",
-        description: "Eco-friendly natural dyes extracted from plants, minerals, and organic sources for vibrant, lasting colors.",
-        icon: "🌿",
+        title: "Pigment Printing",
+        description: "Vibrant, long-lasting pigment printing on textiles — delivering superior color fastness and wash durability.",
+        icon: "🎨",
         color: "#2E7D32",
     },
     {
         id: 3,
         title: "Custom Designs",
-        description: "Bespoke patterns crafted to your specifications, bringing your unique vision to life on premium fabrics.",
+        description: "In-house design support with custom colors, branding, and logo printing — tailored exactly to your specifications.",
         icon: "✨",
         color: "#7B1FA2",
     },
     {
         id: 4,
-        title: "Wholesale Orders",
-        description: "Large-scale production maintaining the same attention to detail and quality for businesses worldwide.",
+        title: "Bulk Production",
+        description: "Production capacity of up to 25,000 pieces with a minimum order quantity of 5,000 — ideal for large-scale textile businesses.",
         icon: "📦",
         color: "#1565C0",
     },
     {
         id: 5,
-        title: "Export Services",
-        description: "International shipping and export documentation handled seamlessly for global clientele.",
-        icon: "🌍",
+        title: "Quality Dyeing",
+        description: "Premium-grade dyeing with high color fastness standards and strict quality checks at every stage of production.",
+        icon: "🌿",
         color: "#00695C",
     },
     {
         id: 6,
-        title: "Heritage Tours",
-        description: "Experience our craft firsthand with guided tours of our traditional printing workshops in Jaipur.",
-        icon: "🏰",
+        title: "Pan India Delivery",
+        description: "Secure packaging in plastic bags, bundles, and bales — with reliable delivery across India for every order.",
+        icon: "🚚",
         color: "#D84315",
     },
 ];
@@ -99,7 +99,7 @@ export default function ServiceCarousel() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-5xl md:text-6xl font-display font-bold text-[#8B0000] mb-4"
                 >
-                    Our Royal <span className="text-gradient-gold">Services</span>
+                    Our Premium <span className="text-gradient-gold">Services</span>
                 </motion.h2>
 
                 <motion.p
@@ -108,7 +108,7 @@ export default function ServiceCarousel() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-xl text-[#5d4037] font-serif max-w-2xl mx-auto italic"
                 >
-                    "Craftsmanship fit for royalty, delivered with devotion"
+                    "50 years of excellence in textile screen printing"
                 </motion.p>
 
                 {/* Decorative Lines */}
